@@ -3,6 +3,7 @@ package vista;
 
 import datos.Persona;
 import modelo.Cola;
+import modelo.OperacionesCola;
 
 /**
  *
@@ -21,7 +22,11 @@ public class NewMain {
         colaPersonas.encolar(new Persona("Fabian", "fabi@uao", "302"));
         colaPersonas.encolar(new Persona("Esteban", "esteban@uao", "303"));
         colaPersonas.encolar(new Persona("Ingrid", "ingrid@uao", "304"));
-        System.out.println("El contenido de la cola es: " + colaPersonas.toString());
+
+        Cola<Persona> colaDuplicada = OperacionesCola.duplicarCola(colaPersonas);
+
+        System.out.println("El contenido de la cola  Original es: " + colaPersonas.toString());
+        System.out.println("El contenido de la duplicada cola es: " + colaDuplicada.toString());
 
         colaPersonas.desencolar();
 
